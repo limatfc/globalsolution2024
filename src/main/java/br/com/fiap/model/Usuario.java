@@ -41,8 +41,7 @@ public class Usuario {
         Usuario newUser = dao.getUsuarioDB();
         System.out.println("Aqui estão as suas informações, " + newUser.nome);
         System.out.println(newUser.endereco.toString());
-        System.out.println(newUser.consumo.toString());
-
+        newUser.consumo.getInformacaoConsumo();
     }
 
 

@@ -46,6 +46,11 @@ public class Provedor {
     }
 
     public void getInformacaoProvedor(){
-        System.out.println("Para o estado " + siglaEstado.toUpperCase() + ", o provedor de energia disponível é " + provedor);
+        if (provedor != ""){
+            System.out.println("Para o estado " + siglaEstado.toUpperCase() + ", o provedor de energia disponível é " + provedor);
+        } else {
+            System.out.println("Parece que o estado " + siglaEstado.toUpperCase() + " não tem nenhum provedor de energia registrado");
+        }
+
     }
 }

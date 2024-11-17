@@ -1,5 +1,6 @@
 package br.com.fiap.model;
 
+import br.com.fiap.dao.ProvedorDAO;
 import br.com.fiap.dao.TarifaDAO;
 
 import java.sql.SQLException;
@@ -46,8 +47,10 @@ public class Tarifa {
 
     public void getInformacaoTarifa() throws SQLException {
         System.out.println("Para o endereço " + endereco.toString() + ", as tarifas para hoje, dia " + data + " são: ");
+        ProvedorDAO provedorDAO = new ProvedorDAO();
+        String provedor = provedorDAO.getProvedorDB(endereco.getEstado());
         TarifaDAO dao = new TarifaDAO();
-        listaTarifaItem = dao.getTarifasDB(endereco, data);
+        listaTarifaItem = dao.getTarifasDB(provedor);
         TarifaItem newTarifaItem = new TarifaItem();
         newTarifaItem.mostrarLista(listaTarifaItem);
     }

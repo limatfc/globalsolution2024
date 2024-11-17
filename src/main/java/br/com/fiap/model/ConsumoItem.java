@@ -38,13 +38,25 @@ public class ConsumoItem {
         this.valor = valor;
     }
 
-    public void setFaturaPaga(Boolean faturaPaga) {
-        this.faturaPaga = faturaPaga;
+    public void setFaturaPaga(String faturaPaga) {
+        if (faturaPaga == "0"){
+            this.faturaPaga = false;
+            return;
+        }
+        this.faturaPaga = true;
     }
-
+public String formatMonth(Month mes){
+    String formattedMonth = mes.toString().substring(0, 1).toUpperCase() +
+            mes.toString().substring(1).toLowerCase();
+    return formattedMonth;
+}
     public void mostrarLista(List<ConsumoItem> lista){
         for (ConsumoItem item : lista){
-            System.out.println("Consumo: " + item.getConsumo() + "Mês: " + item.getMes() + "Valor: " + item.getValor() + "Fatura paga: " + getFaturaPaga());
+            System.out.println("\nHistórico de consumo: + " +
+                    "\nConsumo: " + item.getConsumo() +
+                    "\nMês: " + item.formatMonth(item.getMes()) +
+                    "\nValor: " + item.getValor() +
+                    "\nFatura paga: " + getFaturaPaga());
         }
     }
 }

@@ -59,9 +59,17 @@ public class Consumo {
         this.listaConsumoItem = listaConsumoItem;
     }
 
-    public String toString(){
+    public void getInformacaoConsumo(){
+        System.out.println(this);
         ConsumoItem novoConsumoItem = new ConsumoItem();
         novoConsumoItem.mostrarLista(listaConsumoItem);
-        return "Aqui está o seu consumo: " + menorConsumo + maiorConsumo + totalConsumo + dataInicio + dateFim ;
+    }
+
+    public String toString(){
+        return "\nAqui está o seu consumo: " +
+                "\nMenor consumo: " + menorConsumo + "kWh" +
+                "\nMaior consumo: " + maiorConsumo + "kWh" +
+                "\nTotal consumo: " + totalConsumo + "kWh" +
+                "\nA sua conta está ativa desde: " + dataInicio;
     }
 }

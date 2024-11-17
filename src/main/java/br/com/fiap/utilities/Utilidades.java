@@ -27,19 +27,19 @@ public class Utilidades {
     public void selecaoMenu(Scanner sc) throws Exception {
         do {
             if (userSelection == 1) {
-                System.out.println("Opção selecionada: Consulta de fornecedores de energia");
+                System.out.println("\nOpção selecionada: Consulta de fornecedores de energia");
                 Provedor novoProvedor = new Provedor();
                 novoProvedor.getProvedorFromEstadoInputed(sc);
                 novoProvedor.getInformacaoProvedor();
                 sideMenu(sc);
             } else if (userSelection == 2) {
-                System.out.println("Opção selectionada: Cálculo de custo diário hora e hora");
+                System.out.println("\nOpção selectionada: Cálculo de custo diário hora e hora");
                 Tarifa novaTarifa = new Tarifa();
                 novaTarifa.getEnderecoFromUsuario(sc);
                 novaTarifa.getInformacaoTarifa();
                 sideMenu(sc);
             } else if (userSelection == 3) {
-                System.out.println("Opção selectionada: Informações sobre o cliente");
+                System.out.println("\nOpção selectionada: Informações sobre o cliente");
                 Usuario novoUsuario = new Usuario();
                 novoUsuario.getInformacaoUsuario();
                 sideMenu(sc);
